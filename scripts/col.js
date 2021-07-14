@@ -18,7 +18,7 @@ var img = document.querySelector("#bookcover img");
 img.src = "../images/" + lesson + ".jpg"
 img.title = title;
 img.addEventListener("click", m => {
-	location.href = "/index.html";
+	location.href = "../index.html";
 });
 
 /************************************************************************************
@@ -56,7 +56,7 @@ document.querySelectorAll(".commentary p").forEach(cmt => {
 			t += q
 		}
 	}
-	cmt.innerHTML = t.replace(/[\-\–]\s+(<line>[a-z])/, "$1")
+	cmt.innerHTML = t.replace(/[\-\â€“]\s+(<line>[a-z])/, "$1")
 
 });
 
