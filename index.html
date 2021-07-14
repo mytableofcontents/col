@@ -1,34 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-body {font-family:Arial; font-size:11pt; line-height:1.25;}
-#btn, #txt {margin-top:15px; margin-right:7px;}
-#btn {padding:10px; background-color:gray; color:white; cursor:pointer; cursor:hand; border-radius:5px;  user-select:none; }
-#txt {display:none;}
-</style>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="Christ's Object Lessons (By Ellen White) Study Guide: Seeds of Wisdom by Revelation Publications" name="description" />
+    <meta content="" name="keywords" />
+    <meta content="Mark Blair" name="author" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Seeds of Wisdom</title>
+    <link href="scripts/index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="btn">Answer</div>
-<div id="txt">The kingdom of heaven.</div>
+    <div id="window">
+        <div class="card">
+            <div class="front">
+                <img src="images/cover.jpg" alt="Seeds of Wisdom cover">
+            </div>
+            <div class="back">
+                <a href="content/Lesson01.html"><span>Ln</span></a>
+                <a href="content/Lesson01.html"><span>1</span></a>
+                <a href="content/Lesson02.html"><span>2</span></a>
+                <a href="content/Lesson03.html"><span>3</span></a>
+                <a href="content/Lesson04.html"><span>4</span></a>
+                <a href="content/Lesson05.html"><span>5</span></a>
+                <a href="content/Lesson06.html"><span>6</span></a>
+                <a href="content/Lesson07.html"><span>7</span></a>
+                <a href="content/Lesson08.html"><span>8</span></a>
+                <a href="content/Lesson09.html"><span>9</span></a>
+                <a href="content/Lesson10.html"><span>10</span></a>
+                <a href="content/Lesson11.html"><span>11</span></a>
+                <a href="content/Lesson12.html"><span>12</span></a>
+                <a href="content/Lesson13.html"><span>13</span></a>
+                <a href="content/Lesson14.html"><span>14</span></a>
+                <a href="content/Lesson15.html"><span>15</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <p>&#x21ba; | <span id="directions"></span></p>
+        <p>This Study Guide is for specific congregation use only. <b>Not for wide distribution.</b></p>
+        <p>
+            Bible quotations  are from the NKJV, with punctuation and line breaks preserved.<span></span>
+            Text is from Seeds of Wisdom, Christ's Object Lessons Bible Study Series<span></span>
+            2nd Edition by Revelation Publications &copy;2000.
+        <p>
+            Digital Transcription and Web Design <span></span>by Mark Blair.
+        </p>
+    </div>
 </body>
-<script>
-// This needs to be dynamically determined from the page number itself.
-question = 1;
-
-answers = ["A whole multitude.","Leaven was compared to the kingdom of heaven.","He is drawing everyone to Him.","The Spirit of God.","In the heart.","Our love for Christ.","To be born again by the Spirit of God.","Incorruptible beauty of a quiet spirit.","Conversion.","We are made holy (sanctified) by the Word of God.","We gain through God’s Word the power of salvation and the ability to live by faith.","Love, joy, peace, long-suffering, gentleness, goodness, faith, meekness, and temperance.","Seek first the kingdom of heaven.","Our desire will be to seek the good of others and not self.","Our conduct will become holy.","There is joy in heaven."]
-
-let btn = document.querySelector("#btn");
-btn.style.backgroundImage = "linear-gradient(to right, #1155cc, " + ((question % 2) == 1 ? "white" : "#f2f2f2" ) + ")";
-
-let txt = document.querySelector("#txt");
-txt.innerHTML = answers[question-1]
-
-turn = -1;
-btn.addEventListener("click", e => {
-turn *= -1;
-e.target.style.color = (turn == 1) ? "black" : "white";
-txt.style.display = (turn == 1) ? "block" : "none";
-});
-
-</script>
 </html>
