@@ -27,7 +27,7 @@ img.addEventListener("click", m => {
 
 q = 1;
 toc = "";
-var questionsDone = 7;
+var questionsDone = 8;
 var lessonQuestions = [20, 15, 13, 16, 12, 10, 8, 20, 16, 27, 14, 6, 23, 34, 38];
 lessonQuestions.forEach(qtn => {
 	completed = (q <= questionsDone) ? "completed" : "";
