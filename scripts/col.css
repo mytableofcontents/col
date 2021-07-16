@@ -17,7 +17,7 @@
 
 * {box-sizing:border-box;}
 body {font-family:Merriweather; font-size:12pt; color:black; max-width:60em; margin:0.5em auto 5em; width:70%; max-width:1000px;}
-#image img, .answer span:first-child, input, button, #changeformat span {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
+#image img, .answer span:first-child, input, button, #changeformat span, .question span:first-of-type {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 .references {display:none;}
 
 
