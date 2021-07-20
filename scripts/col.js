@@ -3,8 +3,8 @@
  ************************************************************************************/
 
 var htitle = document.querySelector("head title").innerHTML;  // e.g. Lesson 1: Like Unto Seeds
-var lesson = htitle.split(":")[0].split(" ")[1];
-var title = htitle.split(":")[1];
+var lesson = htitle.split(":")[0].split(" ")[1]; // 1
+var title = htitle.split(":")[1]; // Like Unto Seeds
 
 document.querySelector("#lesson").innerHTML = "Lesson " + lesson;
 document.querySelector("#title").innerHTML = title;
