@@ -1,7 +1,6 @@
 /************************************************************************************
  Show lesson information and image at top of page
  ************************************************************************************/
-
 var htitle = document.querySelector("head title").innerHTML;  // e.g. Lesson 1: Like Unto Seeds
 var lesson = htitle.split(":")[0].split(" ")[1]; // 1
 var title = htitle.split(":")[1]; // Like Unto Seeds
@@ -14,20 +13,20 @@ var img = document.querySelector("#bookcover img");
 img.src = "../images/" + lesson + ".jpg"
 img.title = title;
 
+
 /************************************************************************************
  For the Introductory page (Lesson 0), use the word "Introduction" in the title.
  ************************************************************************************/
-
 if (lesson == 0) {
 	document.querySelector("#lesson").innerHTML = "Introduction";
 	document.querySelector("#title").innerHTML = title;
 	document.querySelector("head title").innerHTML = "Seeds of Wisdom – Introduction";
 }
 
+
 /************************************************************************************
  Set up Table of Contents with lesson numbers and respective number of questions
  ************************************************************************************/
-
 q = 0;
 toc = "";
 var questionsDone = 8;
@@ -46,7 +45,6 @@ document.querySelector("#toc").innerHTML = toc;
  1. Create paragraphs for the "web" format and remove unncessary hyphens
  2. Use a button to toogle between web and book formats.
  ************************************************************************************/
-
 document.querySelectorAll(".commentary p").forEach(cmt => {
 	txt = cmt.innerHTML;
 	d = txt.length / 500;
@@ -57,7 +55,7 @@ document.querySelectorAll(".commentary p").forEach(cmt => {
 			t += q
 		}
 	}
-	cmt.innerHTML = t.replace(/[\-\–]\s+(<line>[a-z])/, "$1") //
+	cmt.innerHTML = t.replace(/[\-\–]\s+(<line>[a-z])/, "$1")
 
 });
 
@@ -71,11 +69,9 @@ document.querySelector("#changeformat span").addEventListener("click", e => {
 });
 
 
-
 /************************************************************************************
  On each ANSWER click, "Answer" changes color and toggles the display of the answer
  ************************************************************************************/
-
 var ansb = document.querySelectorAll(".answer span:first-child");
 ansb.forEach((btn) => {
 	btn.addEventListener("click", e => { 
@@ -88,7 +84,6 @@ ansb.forEach((btn) => {
 /************************************************************************************
  Populate the page with the answers
  ************************************************************************************/
-
 var answers = document.querySelectorAll(".answer span:last-child");
 A = 0;
 fetch("Answers.json").then(response => {
@@ -106,7 +101,6 @@ fetch("Answers.json").then(response => {
 /************************************************************************************
  Populate the page with scripture texts and respective links
  ************************************************************************************/
-
 var verses = document.querySelectorAll(".scripture");
 B = 0;
 fetch("References.json").then(response => {
@@ -127,7 +121,6 @@ fetch("References.json").then(response => {
 /************************************************************************************
  On each SEND click, "Thank you" goes forward-backward through an array of colors 
  ************************************************************************************/
-
 var sendb = document.querySelector(".send button");
 var resp = sendb.nextElementSibling;
 colors = ["#000000", "#333333", "#666666", "#999999", "#cccccc", "#ffffff"];
