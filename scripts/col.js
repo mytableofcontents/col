@@ -53,7 +53,7 @@ document.querySelectorAll(".commentary p").forEach(cmt => {
 	t = txt.substr(0, 500);
 	if (d > 1) {
 		for (n = 500; n < txt.length; n = n + 500) {
-			q = txt.substr(n, 500).replace(/\.\s([A-Z])/, ".<pm></pm> $1");
+			q = txt.substr(n, 500).replace(/([\.\?]\”{0,1})\s([A-Z])/, "$1<pm></pm> $2");
 			t += q
 		}
 	}
