@@ -92,6 +92,7 @@ hr {margin-bottom:initial;}
 .commentary line {font-family: Merriweather_light; color:black;}
 .commentary pm::before {content:"\a"; white-space:pre; display:block; height:0.25em;}
 .commentary pm::after {content:"mm"; white-space:pre; color:transparent; font-size:1em;}
+.commentary bf {display:none;}
 .introduction p {margin-top:1em !important;}
 
 .bookformat {column-count:2; column-width:20em; column-rule:solid 1px black; column-gap:4em; text-indent:0em;}
@@ -99,6 +100,7 @@ hr {margin-bottom:initial;}
 .bookformat line {color:darkgreen;}
 .bookformat pm::before {content:""; white-space:pre; display:inline; height:0em;}
 .bookformat pm::after {content:""; white-space:pre; color:transparent; font-size:1em;}
+.bookformat bf {display:inline;}
 
 
 /***************************************************

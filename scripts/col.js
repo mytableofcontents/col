@@ -55,8 +55,8 @@ document.querySelectorAll(".commentary p").forEach(cmt => {
 			t += q
 		}
 	}
-	cmt.innerHTML = t.replace(/[\-\–]\s+(<line>[a-z])/, "$1")
-
+	cmt.innerHTML = t.replace(/([\-\–]\s+)(<line>[a-z])/g, "<bf>$1</bf>$2");
+	
 });
 
 document.querySelector("#changeformat span").addEventListener("click", e => {
