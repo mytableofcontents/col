@@ -19,8 +19,8 @@ img.title = title;
  ************************************************************************************/
 
 if (lesson == 0) {
-	document.querySelector("#lesson").innerHTML = title; "Introduction";
-	document.querySelector("#title").innerHTML = "Christ's Object Lessons";
+	document.querySelector("#lesson").innerHTML = "Introduction";
+	document.querySelector("#title").innerHTML = title;
 	document.querySelector("head title").innerHTML = "Seeds of Wisdom – Introduction";
 }
 
@@ -117,10 +117,10 @@ fetch("References.json").then(response => {
 		++B;
 		verse.querySelector(".reference span a:first-child").setAttribute("href", ref.contexts[B - 1]);
 		verse.querySelector(".reference span a:last-child").setAttribute("href", ref.versions[B - 1]);
-		verse.querySelector(".text").innerHTML = ref.scriptures[B - 1].split("*")[0];
+		verse.querySelector(".text").innerHTML = ref.scriptures[B - 1];
 	});
 }).catch(err => {
-	console.log("Unable to fetch answers for this lesson: " + err);
+	console.log("Unable to fetch scriptures and links for this lesson: " + err);
 });
 
 
