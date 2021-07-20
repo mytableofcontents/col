@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\content"
+    "\\content",
+    "\\scripts"
   ],
-  "SelectedNode": "\\content\\Lesson07.html",
+  "SelectedNode": "\\scripts\\col.js",
   "PreviewInSolutionExplorer": false
 }

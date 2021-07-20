@@ -1,43 +1,44 @@
-/*
-var bodyposition = document.querySelector("body").getBoundingClientRect().left / 16;
-document.querySelector("#bookcover").style.left = (bodyposition - 12.5) + "em";
-*/
-
 /************************************************************************************
  Show lesson information and image at top of page
  ************************************************************************************/
 
-var htitle = document.querySelector("head title").innerHTML;
+var htitle = document.querySelector("head title").innerHTML;  // e.g. Lesson 1: Like Unto Seeds
 var lesson = htitle.split(":")[0].split(" ")[1];
 var title = htitle.split(":")[1];
 
 document.querySelector("#lesson").innerHTML = "Lesson " + lesson;
 document.querySelector("#title").innerHTML = title;
+document.querySelector("head title").innerHTML = "Seeds of Wisdom – Lesson " + lesson;
 
 var img = document.querySelector("#bookcover img");
 img.src = "../images/" + lesson + ".jpg"
 img.title = title;
-img.addEventListener("click", m => {
-	location.href = "../index.html";
-});
+
+/************************************************************************************
+ For the Introductory page (Lesson 0), use the word "Introduction" in the title.
+ ************************************************************************************/
+
+if (lesson == 0) {
+	document.querySelector("#lesson").innerHTML = title; "Introduction";
+	document.querySelector("#title").innerHTML = "Christ's Object Lessons";
+	document.querySelector("head title").innerHTML = "Seeds of Wisdom – Introduction";
+}
 
 /************************************************************************************
  Set up Table of Contents with lesson numbers and respective number of questions
  ************************************************************************************/
 
-q = 1;
+q = 0;
 toc = "";
 var questionsDone = 8;
-var lessonQuestions = [20, 15, 13, 16, 12, 10, 8, 20, 16, 27, 14, 6, 23, 34, 38];
+var lessonQuestions = ["Intro", 20, 15, 13, 16, 12, 10, 8, 20, 16, 27, 14, 6, 23, 34, 38];
 lessonQuestions.forEach(qtn => {
-	completed = (q <= questionsDone) ? "completed" : "";
-	toc += '<div><a ' + completed + ' href="Lesson' + ('0' + q).substr(-2) + '.html">' + ('0' + q).substr(-2) + '</a><sup ' + completed + '>' + qtn + '</sup></div>';
+	completed = (q <= questionsDone) ? "completed " : "";
+	current = (q == lesson) ? "current" : "";
+	toc += '<div class="' + completed + current + '"><a href="Lesson' + ('0' + q).substr(-2) + '.html">' + ('0' + q).substr(-2) + '</a><span>' + qtn + '</span></div>';
 	q++;
 });
 document.querySelector("#toc").innerHTML = toc;
-current = document.querySelector("#toc div:nth-child(" + lesson + ") a");
-current.classList.add("current");
-current.setAttribute("href", "");
 
 
 /************************************************************************************
@@ -140,3 +141,8 @@ sendb.addEventListener("click", e => {
 	c = c + Math.sin(((Math.trunc(click++ / (n - 1))) * Math.PI) + (Math.PI / 2) );
 });
 
+
+/*
+var headerposition = document.querySelector(".header").getBoundingClientRect().left / 16;
+document.querySelector("#bookcover").style.left = (headerposition - 12.5) + "em";
+*/

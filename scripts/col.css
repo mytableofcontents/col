@@ -17,7 +17,7 @@
 
 * {box-sizing:border-box;}
 body {font-family:Merriweather; font-size:12pt; color:black; max-width:60em; margin:0.5em auto 5em; width:70%; max-width:1000px;}
-#image img, .answer span:first-child, input, button, #changeformat span, .question span:first-of-type {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
+.answer span:first-child, input, button, #changeformat span, .question span:first-of-type {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 .references {display:none;}
 
 
@@ -26,8 +26,8 @@ body {font-family:Merriweather; font-size:12pt; color:black; max-width:60em; mar
 ****************************************************/
 
 .header {background-image:url("../images/headerbg.jpg"); color:white; padding:1.5em; background-position:0em -15em; background-repeat:no-repeat; background-size:cover;}
-#bookcover {position:fixed; top:2em; max-width:8.875em; width:10%; left:2%;}
-#bookcover #image {width:100%; height:11.875em; display:flex; justify-content:center; align-items:center;}
+#bookcover {position:fixed; width:8.875em; top:2em; transform:translateX(-10.875em);}
+#bookcover #image {width:100%; height:11.875em; display:flex; justify-content:center; align-items:flex-end;}
 #image img {width:8em; height:auto;}
 hr {margin-bottom:initial;}
 .note {margin:1em 3em; padding:1em; font-family:Merriweather_italic; font-size:0.9em;}
@@ -36,12 +36,17 @@ hr {margin-bottom:initial;}
 #changeformat {font-family:Arial; font-size:0.75em; width:100%; text-align:center; margin:1em 0em 2em;}
 #changeformat span {color:gray;}
 
-#toc {display:inline-flex; flex-direction:row; flex-wrap:wrap; justify-content:center; width:100%;}
-#toc div {width:33%; height:1.5em; text-align:center;}
-#toc div sup {font-size:0.75em; color:gray; margin-left:0.25em;}
-#toc a {color:black;}
-#toc *[completed] {color:gray;}
-#toc .current {text-decoration:none; color:white; background-image:radial-gradient(circle at center, black, white);}
+#toc_heading {width:100%; font-weight:700;}
+#toc_heading * {display:inline-block; font-size:0.8em; text-align:center;}
+#toc_heading span {background-color:black; color:white; padding:0.75em; margin:auto 1em auto 0em; font-weight:normal; border-radius:0.25em 0.25em 0 0;}
+#toc_heading a {text-decoration:none;}
+#toc {display:inline-flex; flex-direction:column; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; height:13em; border-top:solid black 1px; border-top-right-radius:1em;}
+#toc div {width:50%; height:1.5em; text-align:center; background-color:white;}
+#toc div * {font-size:0.75em; color:chocolate; display:inline-block; width:50%;}
+#toc a {color:black; font-size:1em; text-align:right; text-decoration:none;}
+#toc span {font-style:italic; text-align:left; padding-left:0.25em;}
+#toc .completed a {color:gray;}
+#toc .current a {background-image:linear-gradient(to right, #d2a479, transparent);}
 
 
 /***************************************************
@@ -67,14 +72,14 @@ hr {margin-bottom:initial;}
 .qblock:nth-child(2n) {background-color:var(--color2);}
 
 .qanda {display:inline-flex; flex-direction:row; flex-wrap:nowrap; justify-content:space-between;}
-.qanda .question {font-size:16pt; color:black; text-indent:-4em; margin-left:4em; margin-top:0.5em; text-transform:uppercase;}
+.qanda .question {font-size:16pt; color:black; text-indent:-4.25em; margin-left:4.25em; margin-top:0.5em;}
 .qanda .question span:first-of-type {font-family:Merriweather_italic; padding:0.5em; color:white; background-color:gray; margin-right:0.5em;}
 .qanda .answer {margin-left:3em; position:relative;}
 .qanda .answer span {display:block; font-family:Arial; font-size:0.8em; padding:0.5em;}
 .qanda .answer span:first-child {background-image:linear-gradient(to right, gray, transparent); color:white; margin-top:0.5em;}
 .qanda .answer span:last-child {display:none; background-color:transparent;}
 
-.scripture {margin:2em;}
+.scripture {margin:2em 2em 1.5em;}
 .scripture .reference {font-weight: 700;}
 .scripture .reference a {font-family:Arial; font-size:0.9em; font-variant:small-caps; color:gray; font-weight:400;}
 .scripture .reference a:first-child {margin-left:1.5em;}
@@ -87,6 +92,7 @@ hr {margin-bottom:initial;}
 .commentary line {font-family: Merriweather_light; color:black;}
 .commentary pm::before {content:"\a"; white-space:pre; display:block; height:0.25em;}
 .commentary pm::after {content:"mm"; white-space:pre; color:transparent; font-size:1em;}
+.introduction p {margin-top:1em !important;}
 
 .bookformat {column-count:2; column-width:20em; column-rule:solid 1px black; column-gap:4em; text-indent:0em;}
 .bookformat line:not(:first-child)::before {content:"\a"; white-space:pre;}
@@ -103,6 +109,7 @@ hr {margin-bottom:initial;}
 .appeal .response span {font-size:0.8em; color:#00cccc;}
 .appeal .response span:first-of-type {font-weight:700;}
 .appeal li::marker {color:#00cccc; content:"\271F  "; white-space:pre; font-size:1.25em;}
+.lesson0 li::marker {content:"";}
 
 .send {margin:2em auto;}
 .send button {background-color: black; color: white; padding: 0.5em 1em;}
@@ -132,6 +139,9 @@ hr {margin-bottom:initial;}
 	.answer span {font-size:1em !important;}
 	.reference span {display:table; margin:1em 0em;}
 	.commentary {column-count:1; column-width:25em; margin:inherit;}
+	.appeal {margin:inherit; padding:1em;}
+	.appeal li {margin-left:-1em;}
+	.lesson0 li {margin-left:-2em;}
 }
 
 
