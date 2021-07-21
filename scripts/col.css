@@ -95,12 +95,13 @@ hr {margin-bottom:initial;}
 .commentary bf {display:none;}
 .introduction p {margin-top:1em !important;}
 
-.bookformat {column-count:2; column-width:20em; column-rule:solid 1px black; column-gap:4em; text-indent:0em;}
+.bookformat {column-count:2; column-width:20em; column-rule:solid 1px black; column-gap:3em; text-indent:0em;}
 .bookformat line:not(:first-child)::before {content:"\a"; white-space:pre;}
 .bookformat line {color:darkgreen;}
 .bookformat pm::before {content:""; white-space:pre; display:inline; height:0em;}
 .bookformat pm::after {content:""; white-space:pre; color:transparent; font-size:1em;}
 .bookformat bf {display:inline;}
+.bookformat p:not(:first-of-type) {margin-top:0.5em;}
 
 
 /***************************************************

@@ -51,7 +51,12 @@ document.querySelectorAll(".commentary p").forEach(cmt => {
 	t = txt.substr(0, 500);
 	if (d > 1) {
 		for (n = 500; n < txt.length; n = n + 500) {
-			q = txt.substr(n, 500).replace(/([\.\?]\”{0,1})\s([A-Z])/, "$1<pm></pm> $2");
+			// Divide the paragraph by next sentence leaving no orphans
+			otext = txt.substr(n, 500);
+			ntext = otext.replace(/([\.\?]\”{0,1})\s([A-Z])/, "$1<pm></pm> $2");
+			qtext = ntext.split("<pm></pm>");
+			qt = qtext.length > 1;
+			q = qt ? (qtext[1].replace(/<[\w\/]*?>/g, "").length <= 105 ? otext : ntext) : otext;
 			t += q
 		}
 	}
