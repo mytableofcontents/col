@@ -39,14 +39,14 @@ hr {margin-bottom:initial;}
 #toc_heading {width:100%; font-weight:400;}
 #toc_heading * {display:inline-block; font-size:0.8em; text-align:center;}
 #toc_heading span {background-color:black; color:white; padding:0.75em; margin:auto 1em auto 0em; font-weight:normal; border-radius:0.25em 0.25em 0 0;}
-#toc_heading a {text-decoration:none; color:#b366ff;}
-#toc {display:inline-flex; flex-direction:column; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; height:13em; border-top:solid black 1px; border-top-right-radius:1em;}
+#toc_heading a {text-decoration:none; color:gray;}
+#toc {display:inline-flex; flex-direction:column; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; height:13em; padding-top:0.7em; border:solid transparent 2px; border-image:linear-gradient(to bottom, black, transparent 50%) 10 10 0 0; border-left-width:0px;}
 #toc div {width:50%; height:1.5em; text-align:center; background-color:white;}
 #toc div * {font-size:0.75em; color:chocolate; display:inline-block; width:50%;}
 #toc a {color:black; font-size:1em; text-align:right; text-decoration:none;}
 #toc span {font-style:italic; text-align:left; padding-left:0.25em;}
 #toc .completed a {color:gray;}
-#toc .current a {background-image:linear-gradient(to right, #d2a479, transparent);}
+#toc .current a {color:#b366ff;}
 
 
 /***************************************************
