@@ -1,67 +1,212 @@
 @font-face {
-	font-family:Merriweather;
-	src:url(Merriweather-Regular.ttf) format('truetype');
+    font-family: Merriweather;
+    src: url(Merriweather-Regular.ttf) format('truetype');
 }
+
 @font-face {
-	font-family: Merriweather_light;
-	src:url(Merriweather-Light.ttf) format('truetype');
+    font-family: Merriweather_light;
+    src: url(Merriweather-Light.ttf) format('truetype');
 }
+
 @font-face {
-	font-family: Merriweather_italic;
-	src:url(Merriweather-Italic.ttf) format('truetype')
+    font-family: Merriweather_italic;
+    src: url(Merriweather-Italic.ttf) format('truetype')
 }
 
 /***************************************************
 	GENERAL OPTIONS 
 ****************************************************/
 
-:root {--bwidth:calc(15% + 5.4375em);}
+:root {
+    --bwidth: calc(15% + 5.4375em);
+}
 /* For larger resolutions, use 1000px (for body); else use 70% of screen width */
-@media only screen and (min-width:1422px) { 
-    :root {--bwidth:calc(50% - 500px + 5.4375em);} 
+@media only screen and (min-width:1422px) {
+    :root {
+        --bwidth: calc(50% - 500px + 5.4375em);
+    }
 }
 
-* {box-sizing:border-box;}
-body {font-family:Merriweather; font-size:12pt; color:black; margin:0.5em var(--bwidth) 5em; width:70%; max-width:1000px;}
-.answer span:first-child, input, button, #changeformat span, .question span:first-of-type {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
-.references {display:none;}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Merriweather;
+    font-size: 12pt;
+    color: black;
+    margin: 0.5em var(--bwidth) 5em;
+    width: 70%;
+    max-width: 1000px;
+}
+
+.answer span:first-child, input, button, #changeformat span, .question span:first-of-type {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.references {
+    display: none;
+}
 
 
 /***************************************************
 	SIDE IMAGE, FORMAT AND TABLE OF CONTENTS 
 ****************************************************/
 
-.header {background-image:url("../images/headerbg.jpg"); color:white; padding:1.5em; background-position:0em -15em; background-repeat:no-repeat; background-size:cover;}
-#bookcover {position:fixed; width:8.875em; top:0em; transform:translateX(-10.875em);}
-#bookcover #image {width:100%; height:11.875em; display:flex; justify-content:center; align-items:flex-end;}
-#image img {width:8em; height:auto;}
-hr {margin-bottom:initial;}
-.note {margin:1em 3em; padding:1em; font-family:Merriweather_italic; font-size:0.9em;}
-.note:before {content:"Introduction:"; font-family:Arial; font-variant:small-caps; font-weight:700; margin-right:0.5em;}
+.header {
+    background-image: url("../images/headerbg.jpg");
+    color: white;
+    padding: 1.5em;
+    background-position: 0em -15em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-#changeformat {font-family:Arial; font-size:0.75em; width:100%; text-align:center; margin:1em 0em 2em;}
-#changeformat span {color:gray;}
+#bookcover {
+    position: fixed;
+    width: 8.875em;
+    top: 0em;
+    transform: translateX(-10.875em);
+}
 
-#toc_heading {width:100%; font-weight:400;}
-#toc_heading * {display:inline-block; font-size:0.8em; text-align:center;}
-#toc_heading span {background-color:black; color:white; padding:0.75em; margin:auto 1em auto 0em; font-weight:normal; border-radius:0.25em 0.25em 0 0;}
-#toc_heading a {text-decoration:none; color:gray;}
-#toc {display:inline-flex; flex-direction:column; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; height:13em; padding-top:0.7em; border:solid transparent 2px; border-image:linear-gradient(to bottom, black, transparent 50%) 10 10 0 0; border-left-width:0px;}
-#toc div {width:50%; height:1.5em; text-align:center; background-color:white;}
-#toc div * {font-size:0.75em; color:chocolate; display:inline-block; width:50%;}
-#toc a {color:black; font-size:1em; text-align:right; text-decoration:none;}
-#toc span {font-style:italic; text-align:left; padding-left:0.25em;}
-#toc .completed a {color:gray;}
-#toc .current a {color:#b366ff;}
+    #bookcover #image {
+        width: 100%;
+        height: 11.875em;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+#image img {
+    width: 8em;
+    height: auto;
+}
+
+hr {
+    margin-bottom: initial;
+}
+
+.note {
+    margin: 1em 3em;
+    padding: 1em;
+    font-family: Merriweather_italic;
+    font-size: 0.9em;
+}
+
+    .note:before {
+        content: "Introduction:";
+        font-family: Arial;
+        font-variant: small-caps;
+        font-weight: 700;
+        margin-right: 0.5em;
+    }
+
+#changeformat {
+    font-family: Arial;
+    font-size: 0.75em;
+    width: 100%;
+    text-align: center;
+    margin: 1em 0em 2em;
+}
+
+    #changeformat span {
+        color: gray;
+    }
+
+#toc_heading {
+    width: 100%;
+    font-weight: 400;
+}
+
+    #toc_heading * {
+        display: inline-block;
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    #toc_heading span {
+        background-color: black;
+        color: white;
+        padding: 0.75em;
+        margin: auto 1em auto 0em;
+        font-weight: normal;
+        border-radius: 0.25em 0.25em 0 0;
+    }
+
+    #toc_heading a {
+        text-decoration: none;
+        color: gray;
+    }
+
+#toc {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 13em;
+    padding-top: 0.7em;
+    border: solid transparent 2px;
+    border-image: linear-gradient(to bottom, black, transparent 50%) 10 10 0 0;
+    border-left-width: 0px;
+}
+
+    #toc div {
+        width: 50%;
+        height: 1.5em;
+        text-align: center;
+        background-color: white;
+    }
+
+        #toc div * {
+            font-size: 0.75em;
+            color: chocolate;
+            display: inline-block;
+            width: 50%;
+        }
+
+    #toc a {
+        color: black;
+        font-size: 1em;
+        text-align: right;
+        text-decoration: none;
+    }
+
+    #toc span {
+        font-style: italic;
+        text-align: left;
+        padding-left: 0.25em;
+    }
+
+    #toc .completed a {
+        color: gray;
+    }
+
+    #toc .current a {
+        color: #b366ff;
+    }
 
 
 /***************************************************
 	HEADER SECTION 
 ****************************************************/
 
-#lesson {font-size:1.5em;}
-#title {font-size:2em;}
-#info span {font-family:Merriweather_italic;}
+#lesson {
+    font-size: 1.5em;
+}
+
+#title {
+    font-size: 2em;
+}
+
+#info span {
+    font-family: Merriweather_italic;
+}
 
 
 /***************************************************
@@ -69,60 +214,229 @@ hr {margin-bottom:initial;}
 ****************************************************/
 
 .qblock {
-	--color1: #f2f2f2;
-	--color2: #e6e6e6;
+    --color1: #f2f2f2;
+    --color2: #e6e6e6;
 }
 
-.qblock {margin-top:0.5em; padding:1em; width:100%; border:solid white 1px;}
-.qblock:nth-child(2n+1) {background-color:var(--color1);}
-.qblock:nth-child(2n) {background-color:var(--color2);}
+.qblock {
+    margin-top: 0.5em;
+    padding: 1em;
+    width: 100%;
+    border: solid white 1px;
+}
 
-.qanda {display:inline-flex; flex-direction:row; flex-wrap:nowrap; justify-content:space-between;}
-.qanda .question {font-size:16pt; color:black; text-indent:-4.25em; margin-left:4.25em; margin-top:0.5em;}
-.qanda .question span:first-of-type {font-family:Merriweather_italic; padding:0.5em; color:white; background-color:gray; margin-right:0.5em;}
-.qanda .answer {margin-left:3em; position:relative;}
-.qanda .answer span {display:block; font-family:Arial; font-size:0.8em; padding:0.5em;}
-.qanda .answer span:first-child {background-image:linear-gradient(to right, gray, transparent); color:white; margin-top:0.5em;}
-.qanda .answer span:last-child {display:none; background-color:transparent;}
+    .qblock:nth-child(2n+1) {
+        background-color: var(--color1);
+    }
 
-.scripture {margin:2em 2em 1.5em;}
-.scripture .reference {font-weight: 700;}
-.scripture .reference a {font-family:Arial; font-size:0.9em; font-variant:small-caps; color:gray; font-weight:400;}
-.scripture .reference a:first-child {margin-left:1.5em;}
-.scripture .reference a:last-child {margin-left:0.5em;}
-.scripture .text {line-height: 1.5;	color:brown;}
+    .qblock:nth-child(2n) {
+        background-color: var(--color2);
+    }
 
-.commentary p::selection, .commentary p line::selection {background-color:#e9e37d; color:black;}
-.commentary {margin:1.5em 6em; line-height:1.5; text-indent:2em;}
-.commentary p {margin:0 auto;}
-.commentary line {font-family: Merriweather_light; color:black;}
-.commentary pm::before {content:"\a"; white-space:pre; display:block; height:0.25em;}
-.commentary pm::after {content:"mm"; white-space:pre; color:transparent; font-size:1em;}
-.commentary bf {display:none;}
-.introduction p {margin-top:1em !important;}
+.qanda {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
 
-.bookformat {column-count:2; column-width:20em; column-rule:solid 1px black; column-gap:3em; text-indent:0em;}
-.bookformat line:not(:first-child)::before {content:"\a"; white-space:pre;}
-.bookformat line {color:darkgreen;}
-.bookformat pm::before {content:""; white-space:pre; display:inline; height:0em;}
-.bookformat pm::after {content:""; white-space:pre; color:transparent; font-size:1em;}
-.bookformat bf {display:inline;}
-.bookformat p:not(:first-of-type) {margin-top:0.5em;}
+    .qanda .question {
+        font-size: 16pt;
+        color: black;
+        text-indent: -4.25em;
+        margin-left: 4.25em;
+        margin-top: 0.5em;
+    }
+
+        .qanda .question span:first-of-type {
+            font-family: Merriweather_italic;
+            padding: 0.5em;
+            color: white;
+            background-color: gray;
+            margin-right: 0.5em;
+        }
+
+    .qanda .answer {
+        margin-left: 3em;
+        position: relative;
+    }
+
+        .qanda .answer span {
+            display: block;
+            font-family: Arial;
+            font-size: 0.8em;
+            padding: 0.5em;
+        }
+
+            .qanda .answer span:first-child {
+                background-image: linear-gradient(to right, gray, transparent);
+                color: white;
+                margin-top: 0.5em;
+            }
+
+            .qanda .answer span:last-child {
+                display: none;
+                background-color: transparent;
+            }
+
+.scripture {
+    margin: 2em 2em 1.5em;
+}
+
+    .scripture .reference {
+        font-weight: 700;
+    }
+
+        .scripture .reference a {
+            font-family: Arial;
+            font-size: 0.9em;
+            font-variant: small-caps;
+            color: gray;
+            font-weight: 400;
+        }
+
+            .scripture .reference a:first-child {
+                margin-left: 1.5em;
+            }
+
+            .scripture .reference a:last-child {
+                margin-left: 0.5em;
+            }
+
+    .scripture .text {
+        line-height: 1.5;
+        color: brown;
+    }
+
+.commentary p::selection, .commentary p line::selection {
+    background-color: #e9e37d;
+    color: black;
+}
+
+.commentary {
+    margin: 1.5em 6em;
+    line-height: 1.5;
+    text-indent: 2em;
+}
+
+    .commentary p {
+        margin: 0 auto;
+    }
+
+    .commentary line {
+        font-family: Merriweather_light;
+        color: black;
+    }
+
+    .commentary pm::before {
+        content: "\a";
+        white-space: pre;
+        display: block;
+        height: 0.25em;
+    }
+
+    .commentary pm::after {
+        content: "mm";
+        white-space: pre;
+        color: transparent;
+        font-size: 1em;
+    }
+
+    .commentary bf {
+        display: none;
+    }
+
+.introduction p {
+    margin-top: 1em !important;
+}
+
+.bookformat {
+    column-count: 2;
+    column-width: 20em;
+    column-rule: solid 1px black;
+    column-gap: 3em;
+    text-indent: 0em;
+}
+
+    .bookformat line:not(:first-child)::before {
+        content: "\a";
+        white-space: pre;
+    }
+
+    .bookformat line {
+        color: darkgreen;
+    }
+
+    .bookformat pm::before {
+        content: "";
+        white-space: pre;
+        display: inline;
+        height: 0em;
+    }
+
+    .bookformat pm::after {
+        content: "";
+        white-space: pre;
+        color: transparent;
+        font-size: 1em;
+    }
+
+    .bookformat bf {
+        display: inline;
+    }
+
+    .bookformat p:not(:first-of-type) {
+        margin-top: 0.5em;
+    }
 
 
 /***************************************************
 	APPEAL AND RESPONSE SECTIONS 
 ****************************************************/
 
-.appeal {padding:2em 3em; color:white; background-color:#006666; border-top:solid black 0.5em; border-bottom:solid black 0.5em; font-family:Merriweather_italic;}
-.appeal .response span {font-size:0.8em; color:#00cccc;}
-.appeal .response span:first-of-type {font-weight:700;}
-.appeal li::marker {color:#00cccc; content:"\271F  "; white-space:pre; font-size:1.25em;}
-.lesson0 li::marker {content:"";}
+.appeal {
+    padding: 2em 3em;
+    color: white;
+    background-color: #006666;
+    border-top: solid black 0.5em;
+    border-bottom: solid black 0.5em;
+    font-family: Merriweather_italic;
+}
 
-.send {margin:2em auto;}
-.send button {background-color: black; color: white; padding: 0.5em 1em;}
-.send span {margin-left:1.5em; font-family:Merriweather_italic;}
+    .appeal .response span {
+        font-size: 0.8em;
+        color: #00cccc;
+    }
+
+        .appeal .response span:first-of-type {
+            font-weight: 700;
+        }
+
+    .appeal li::marker {
+        color: #00cccc;
+        content: "\271F  ";
+        white-space: pre;
+        font-size: 1.25em;
+    }
+
+.lesson0 li::marker {
+    content: "";
+}
+
+.send {
+    margin: 2em auto;
+}
+
+    .send button {
+        background-color: black;
+        color: white;
+        padding: 0.5em 1em;
+    }
+
+    .send span {
+        margin-left: 1.5em;
+        font-family: Merriweather_italic;
+    }
 
 
 /***************************************************
@@ -130,27 +444,98 @@ hr {margin-bottom:initial;}
 ****************************************************/
 
 @media only screen and (min-width: 1001px) {
-	#info span {display:block;}
-	.qanda .answer span {width:17em;}
-	.qanda .answer span:last-child {position:absolute; top:2.75em;}
-	.scriptures {margin:0 4em !important;}
+    #info span {
+        display: block;
+    }
 
+    .qanda .answer span {
+        width: 17em;
+    }
+
+        .qanda .answer span:last-child {
+            position: absolute;
+            top: 2.75em;
+        }
+
+    .scriptures {
+        margin: 0 4em !important;
+    }
 }
+
 @media only screen and (max-width: 1000px) {
-	body {background-color: lightblue; width:90%; margin:0.75em auto;}
-	.header {background-image:url("../images/headerbg.jpg"); color:white; padding:1.5em; background-position:center; background-repeat: no-repeat; background-size: cover;}
-	#info span:before {content:" "; white-space:pre;}
-	#bookcover {display:none;}
-	.note {margin:1em auto; padding:1em; text-align:center;}
-	.qblock {width:100%; padding:1em;}
-	.qanda {display:inline-flex; flex-direction:column; flex-wrap:nowrap; justify-content:space-between;}
-	.answer {margin-top:0.5em;}
-	.answer span {font-size:1em !important;}
-	.reference span {display:table; margin:1em 0em;}
-	.commentary {column-count:1; column-width:25em; margin:inherit;}
-	.appeal {margin:inherit; padding:1em;}
-	.appeal li {margin-left:-1em;}
-	.lesson0 li {margin-left:-2em;}
+    body {
+        background-color: lightblue;
+        width: 90%;
+        margin: 0.75em auto;
+    }
+
+    .header {
+        background-image: url("../images/headerbg.jpg");
+        color: white;
+        padding: 1.5em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #info span:before {
+        content: " ";
+        white-space: pre;
+    }
+
+    #bookcover {
+        display: none;
+    }
+
+    .note {
+        margin: 1em auto;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .qblock {
+        width: 100%;
+        padding: 1em;
+    }
+
+    .qanda {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .answer {
+        margin-top: 0.5em;
+    }
+
+        .answer span {
+            font-size: 1em !important;
+        }
+
+    .reference span {
+        display: table;
+        margin: 1em 0em;
+    }
+
+    .commentary {
+        column-count: 1;
+        column-width: 25em;
+        margin: inherit;
+    }
+
+    .appeal {
+        margin: inherit;
+        padding: 1em;
+    }
+
+        .appeal li {
+            margin-left: -1em;
+        }
+
+    .lesson0 li {
+        margin-left: -2em;
+    }
 }
 
 
