@@ -16,7 +16,7 @@
 ****************************************************/
 
 * {box-sizing:border-box;}
-body {font-family:Merriweather; font-size:12pt; color:black; max-width:60em; margin:0.5em auto 5em; width:70%; max-width:1000px;}
+body {font-family:Merriweather; font-size:12pt; color:black; margin:0.5em calc((30% + 10.875em) / 2) 5em; width:70%; max-width:1000px;}
 .answer span:first-child, input, button, #changeformat span, .question span:first-of-type {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 .references {display:none;}
 
@@ -26,7 +26,7 @@ body {font-family:Merriweather; font-size:12pt; color:black; max-width:60em; mar
 ****************************************************/
 
 .header {background-image:url("../images/headerbg.jpg"); color:white; padding:1.5em; background-position:0em -15em; background-repeat:no-repeat; background-size:cover;}
-#bookcover {position:fixed; width:8.875em; top:2em; transform:translateX(-10.875em);}
+#bookcover {position:fixed; width:8.875em; top:0em; transform:translateX(-10.875em);}
 #bookcover #image {width:100%; height:11.875em; display:flex; justify-content:center; align-items:flex-end;}
 #image img {width:8em; height:auto;}
 hr {margin-bottom:initial;}
