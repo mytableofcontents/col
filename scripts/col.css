@@ -15,8 +15,13 @@
 	GENERAL OPTIONS 
 ****************************************************/
 
+:root {--bwidth:calc(15% + 5.4375em);}
+@media only screen and (min-width:1422px) { /* For larger resolutions, use 1000px (for body); else use 70% of screen width */
+    :root {--bwidth:calc(50% - 500px + 5.4375em);} 
+}
+
 * {box-sizing:border-box;}
-body {font-family:Merriweather; font-size:12pt; color:black; margin:0.5em calc((30% + 10.875em) / 2) 5em; width:70%; max-width:1000px;}
+body {font-family:Merriweather; font-size:12pt; color:black; margin:0.5em var(--bwidth) 5em; width:70%; max-width:1000px;}
 .answer span:first-child, input, button, #changeformat span, .question span:first-of-type {cursor:pointer; cursor:hand; -webkit-user-select:none; -ms-user-select:none; user-select:none;}
 .references {display:none;}
 
