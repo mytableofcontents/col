@@ -128,7 +128,7 @@ fetch("References.json").then(response => {
  ************************************************************************************/
 var sendb = document.querySelector(".send button");
 var resp = sendb.nextElementSibling;
-colors = ["#000000", "#333333", "#666666", "#999999", "#cccccc", "#ffffff"];
+var colors = ["#000000", "#333333", "#666666", "#999999", "#cccccc", "#ffffff"];
 var c = 0;
 
 sendb.addEventListener("click", e => {
