@@ -129,14 +129,13 @@ fetch("References.json").then(response => {
 var sendb = document.querySelector(".send button");
 var resp = sendb.nextElementSibling;
 colors = ["#000000", "#333333", "#666666", "#999999", "#cccccc", "#ffffff"];
-n = colors.length;
-c = 0;
-click = 0;
+var c = 0;
 
 sendb.addEventListener("click", e => {
 	if (c == 0) { resp.innerHTML = "Thank you."; }
 	resp.style.color = colors[c];
-	c = c + Math.sin(((Math.trunc(click++ / (n - 1))) * Math.PI) + (Math.PI / 2) );
+	addone = c == 0 ? 1 : (c == 5 ? -1 : addone);
+	c += addone;
 });
 
 
