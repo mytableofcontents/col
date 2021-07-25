@@ -271,7 +271,7 @@ hr {
             .qanda .answer span:first-child {
                 background-image: linear-gradient(to right, gray, transparent);
                 color: white;
-                margin-top: 0.5em;
+                margin-top: 0.8em;
             }
 
             .qanda .answer span:last-child {
