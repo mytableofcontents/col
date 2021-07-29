@@ -29,7 +29,7 @@ if (lesson == 0) {
  ************************************************************************************/
 q = 0;
 toc = "";
-var questionsDone = 8;
+var questionsDone = 9;
 var lessonQuestions = ["Intro", 20, 15, 13, 16, 12, 10, 8, 20, 16, 27, 14, 6, 23, 34, 38];
 lessonQuestions.forEach(qtn => {
 	completed = (q <= questionsDone) ? "completed " : "";
