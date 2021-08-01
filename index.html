@@ -9,6 +9,19 @@
 
     <title>Seeds of Wisdom &ndash; Home</title>
     <link href="scripts/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" defer>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/colsw.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </head>
 <body>
     <div id="window">
