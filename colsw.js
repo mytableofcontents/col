@@ -1,4 +1,4 @@
-var CACHE_NAME = 'col-cache-202108011024';
+var CACHE_NAME = "col-cache-20210801+1656";
 var urlsToCache = [
     "/",
     "/index.html",
@@ -55,6 +55,22 @@ self.addEventListener('install', function (event) {
                 console.log('Opened cache');
                 return cache.addAll(urlsToCache);
             })
+    );
+});
+
+self.addEventListener('activate', function (event) {
+    var cacheAllowlist = [CACHE_NAME];
+    // Delete old caches
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(
+                cacheNames.map(function (cacheName) {
+                    if (cacheAllowlist.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
     );
 });
 
