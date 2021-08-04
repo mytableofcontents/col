@@ -1,4 +1,4 @@
-var CACHE_NAME = "col-cache-20210801+1656";
+var CACHE_NAME = "col-cache-20210803+2129";
 var urlsToCache = [
     "/",
     "/index.html",
