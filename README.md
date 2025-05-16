@@ -1,1 +1,1 @@
-Stuff in general
+Stuff shared with writing group
